@@ -1,0 +1,21 @@
+{
+  "name": "my_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel src/index.html",
+    "prod": "npm run clearDistFolder && parcel --public-url . build src/index.html",
+    "release": "npm run clearAndroidAssets && npm run copyDistToAssets",
+    "copyDistToAssets": "cp ./dist/* ../AndroidProject/app/src/main/assets/",
+    "clearAndroidAssets" : "rm -f ../AndroidProject/app/src/main/assets/*",
+    "clearDistFolder": "rm -f ./dist/*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}
